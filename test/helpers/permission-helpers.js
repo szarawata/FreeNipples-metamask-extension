@@ -1,7 +1,7 @@
 import { strict as assert } from 'assert';
 import stringify from 'fast-safe-stringify';
 
-import { noop } from '../mocks/permission-controller';
+import { noop } from '../mocks/permissions';
 
 /**
  * Grants the given permissions to the given origin, using the given permissions
@@ -9,7 +9,7 @@ import { noop } from '../mocks/permission-controller';
  *
  * Just a wrapper for an rpc-cap middleware function.
  *
- * @param {PermissionsController} permController - The permissions controller.
+ * @param {PermissionController} permController - The permissions controller.
  * @param {string} origin - The origin to grant permissions to.
  * @param {Object} permissions - The permissions to grant.
  */
@@ -21,7 +21,7 @@ export function grantPermissions(permController, origin, permissions) {
  * Returns a wrapper for the given permissions controller's requestUserApproval
  * function, so we don't have to worry about its internals.
  *
- * @param {PermissionsController} permController - The permissions controller.
+ * @param {PermissionController} permController - The permissions controller.
  * @return {Function} A convenient wrapper for the requestUserApproval function.
  */
 export function getRequestUserApprovalHelper(permController) {
@@ -46,7 +46,7 @@ export function getRequestUserApprovalHelper(permController) {
  *
  * This function must be called on the permissions controller for each request.
  *
- * @param {PermissionsController} permController - A permissions controller.
+ * @param {PermissionController} permController - A permissions controller.
  * @returns {Promise<void>} A Promise that resolves once a pending approval
  * has been set.
  */

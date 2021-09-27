@@ -30,6 +30,9 @@
     "KeyringController": {
       "vault": "{\"data\":\"s6TpYjlUNsn7ifhEFTkuDGBUM1GyOlPrim7JSjtfIxgTt8/6MiXgiR/CtFfR4dWW2xhq85/NGIBYEeWrZThGdKGarBzeIqBfLFhw9n509jprzJ0zc2Rf+9HVFGLw+xxC4xPxgCS0IIWeAJQ+XtGcHmn0UZXriXm8Ja4kdlow6SWinB7sr/WM3R0+frYs4WgllkwggDf2/Tv6VHygvLnhtzp6hIJFyTjh+l/KnyJTyZW1TkZhDaNDzX3SCOHT\",\"iv\":\"FbeHDAW5afeWNORfNJBR0Q==\",\"salt\":\"TxZ+WbCW6891C9LK/hbMAoUsSEW1E8pyGLVBU6x5KR8=\"}"
     },
+    "MetaMetricsController": {
+      "participateInMetaMetrics": false
+    },
     "NetworkController": {
       "provider": {
         "nickname": "Localhost 8545",
@@ -60,11 +63,13 @@
       }
     },
     "OnboardingController": {
+      "completedOnboarding": true,
+      "firstTimeFlowType": "import",
       "onboardingTabs": {},
-      "seedPhraseBackedUp": false
+      "seedPhraseBackedUp": true
     },
-    "PermissionsMetadata": {
-      "permissionsLog": [
+    "PermissionLogController": {
+      "permissionActivityLog": [
         {
           "id": 1764280960,
           "method": "eth_requestAccounts",
@@ -87,7 +92,7 @@
           "success": true
         }
       ],
-      "permissionsHistory": {
+      "permissionHistory": {
         "http://127.0.0.1:8080": {
           "eth_accounts": {
             "accounts": {
@@ -96,66 +101,66 @@
             "lastApproved": 1594348332276
           }
         }
-      },
-      "domainMetadata": {
+      }
+    },
+    "SubjectMetadataController": {
+      "subjectMetadata": {
         "http://127.0.0.1:8080": {
           "name": "E2E Test Dapp",
-          "icon": "http://127.0.0.1:8080/metamask-fox.svg",
-          "lastUpdated": 1594348323811,
-          "host": "127.0.0.1:8080"
+          "iconUrl": "http://127.0.0.1:8080/metamask-fox.svg"
         }
       }
     },
     "PreferencesController": {
-      "frequentRpcListDetail": [],
-      "accountTokens": {
-        "0x5cfe73b6021e818b776b421b1c4db2474086a7e1": {
-          "rinkeby": [],
-          "ropsten": []
-        }
-      },
-      "assetImages": {},
-      "tokens": [],
-      "suggestedTokens": {},
-      "useBlockie": false,
-      "useNonceField": false,
-      "usePhishDetect": true,
-      "featureFlags": {
-        "showIncomingTransactions": true,
-        "transactionTime": false
-      },
-      "knownMethodData": {},
-      "participateInMetaMetrics": false,
-      "firstTimeFlowType": "create",
       "currentLocale": "en",
+      "dismissSeedBackUpReminder": true,
+      "featureFlags": {
+        "showIncomingTransactions": true
+      },
+      "forgottenPassword": false,
+      "frequentRpcListDetail": [
+        {
+          "chainId": "0x539",
+          "nickname": "Localhost 8545",
+          "rpcPrefs": {},
+          "rpcUrl": "http://localhost:8545",
+          "ticker": "ETH"
+        }
+      ],
       "identities": {
         "0x5cfe73b6021e818b776b421b1c4db2474086a7e1": {
           "address": "0x5cfe73b6021e818b776b421b1c4db2474086a7e1",
+          "lastSelected": 1626907346643,
           "name": "Account 1"
         }
       },
+      "infuraBlocked": false,
+      "ipfsGateway": "dweb.link",
+      "knownMethodData": {},
       "lostIdentities": {},
-      "forgottenPassword": false,
       "preferences": {
+        "hideZeroBalanceTokens": false,
+        "showFiatInTestnets": false,
         "useNativeCurrencyAsPrimaryCurrency": true
       },
-      "completedOnboarding": true,
-      "metaMetricsId": null,
-      "ipfsGateway": "dweb.link",
-      "selectedAddress": "0x5cfe73b6021e818b776b421b1c4db2474086a7e1"
+      "selectedAddress": "0x5cfe73b6021e818b776b421b1c4db2474086a7e1",
+      "useBlockie": false,
+      "useLedgerLive": false,
+      "useNonceField": false,
+      "usePhishDetect": true,
+      "useStaticTokenList": false
     },
     "config": {},
     "firstTimeInfo": {
       "date": 1575697234195,
-      "version": "7.7.0"
+      "version": "10.4.0"
     },
-    "PermissionsController": {
-      "permissionsRequests": [],
-      "permissionsDescriptions": {},
-      "domains": {
+    "PermissionController": {
+      "subjects": {
         "http://127.0.0.1:8080": {
-          "permissions": [
-            {
+          "origin": "http://127.0.0.1:8080",
+          "permissions": {
+            "eth_accounts": {
               "@context": ["https://github.com/MetaMask/rpc-cap"],
               "parentCapability": "eth_accounts",
               "id": "f55a1c15-ea48-4088-968e-63be474d42fa",
@@ -163,23 +168,17 @@
               "invoker": "http://127.0.0.1:8080",
               "caveats": [
                 {
-                  "type": "limitResponseLength",
-                  "value": 1,
-                  "name": "primaryAccountOnly"
-                },
-                {
-                  "type": "filterResponse",
-                  "value": ["0x5cfe73b6021e818b776b421b1c4db2474086a7e1"],
-                  "name": "exposedAccounts"
+                  "type": "restrictReturnedAccounts",
+                  "value": ["0x5cfe73b6021e818b776b421b1c4db2474086a7e1"]
                 }
               ]
             }
-          ]
+          }
         }
       }
     }
   },
   "meta": {
-    "version": 47
+    "version": 68
   }
 }

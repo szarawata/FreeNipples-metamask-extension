@@ -77,10 +77,8 @@
       "onboardingTabs": {},
       "seedPhraseBackedUp": true
     },
-    "PermissionsController": {
-      "domains": {},
-      "permissionsDescriptions": {},
-      "permissionsRequests": []
+    "PermissionController": {
+      "subjects": {}
     },
     "PreferencesController": {
       "completedOnboarding": true,

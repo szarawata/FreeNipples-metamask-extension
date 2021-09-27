@@ -63,8 +63,8 @@
       "onboardingTabs": {},
       "seedPhraseBackedUp": false
     },
-    "PermissionsMetadata": {
-      "permissionsLog": [
+    "PermissionLogController": {
+      "permissionActivityLog": [
         {
           "id": 1764280960,
           "method": "eth_requestAccounts",
@@ -87,7 +87,7 @@
           "success": true
         }
       ],
-      "permissionsHistory": {
+      "permissionHistory": {
         "http://127.0.0.1:8080": {
           "eth_accounts": {
             "accounts": {
@@ -96,13 +96,13 @@
             "lastApproved": 1594348332276
           }
         }
-      },
-      "domainMetadata": {
+      }
+    },
+    "SubjectMetadataController": {
+      "subjectMetadata": {
         "http://127.0.0.1:8080": {
           "name": "E2E Test Dapp",
-          "icon": "http://127.0.0.1:8080/metamask-fox.svg",
-          "lastUpdated": 1594348323811,
-          "host": "127.0.0.1:8080"
+          "iconUrl": "http://127.0.0.1:8080/metamask-fox.svg"
         }
       }
     },
@@ -149,34 +149,8 @@
       "date": 1575697234195,
       "version": "7.7.0"
     },
-    "PermissionsController": {
-      "permissionsRequests": [],
-      "permissionsDescriptions": {},
-      "domains": {
-        "http://127.0.0.1:8080": {
-          "permissions": [
-            {
-              "@context": ["https://github.com/MetaMask/rpc-cap"],
-              "parentCapability": "eth_accounts",
-              "id": "f55a1c15-ea48-4088-968e-63be474d42fa",
-              "date": 1594348332268,
-              "invoker": "http://127.0.0.1:8080",
-              "caveats": [
-                {
-                  "type": "limitResponseLength",
-                  "value": 1,
-                  "name": "primaryAccountOnly"
-                },
-                {
-                  "type": "filterResponse",
-                  "value": ["0x5cfe73b6021e818b776b421b1c4db2474086a7e1"],
-                  "name": "exposedAccounts"
-                }
-              ]
-            }
-          ]
-        }
-      }
+    "PermissionController": {
+      "subjects": {}
     }
   },
   "meta": {

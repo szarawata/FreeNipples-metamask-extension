@@ -130,10 +130,8 @@
       "participateInMetaMetrics": false,
       "metaMetricsId": null
     },
-    "PermissionsController": {
-      "permissionsRequests": [],
-      "permissionsDescriptions": {},
-      "domains": {}
+    "PermissionController": {
+      "subjects": {}
     },
     "TransactionController": {
       "transactions": {
