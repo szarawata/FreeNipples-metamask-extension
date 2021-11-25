@@ -1105,12 +1105,6 @@
   "pending": {
     "message": "in corso"
   },
-  "permissionCheckedIconDescription": {
-    "message": "Hai approvato questo permesso"
-  },
-  "permissionUncheckedIconDescription": {
-    "message": "Non hai approvato questo permesso"
-  },
   "permissions": {
     "message": "Permessi"
   },
