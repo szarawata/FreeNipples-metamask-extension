@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import SiteOrigin from '../../ui/site-origin/site-origin';
+import Chip from '../../ui/chip';
 
 export default class PermissionsConnectHeader extends Component {
   static propTypes = {
@@ -9,6 +10,7 @@ export default class PermissionsConnectHeader extends Component {
     siteOrigin: PropTypes.string.isRequired,
     headerTitle: PropTypes.node,
     headerText: PropTypes.string,
+    npmLabel: PropTypes.string
   };
 
   static defaultProps = {
@@ -28,11 +30,12 @@ export default class PermissionsConnectHeader extends Component {
   }
 
   render() {
-    const { headerTitle, headerText } = this.props;
+    const { headerTitle, headerText, npmLabel } = this.props;
     return (
       <div className="permissions-connect-header">
         {this.renderHeaderIcon()}
         <div className="permissions-connect-header__title">{headerTitle}</div>
+        {npmLabel ? <Chip label={npmLabel} /> : null}
         <div className="permissions-connect-header__subtitle">{headerText}</div>
       </div>
     );

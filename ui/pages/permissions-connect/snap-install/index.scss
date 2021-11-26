@@ -1,17 +1,18 @@
-.permissions-connect-footer {
+.snap-install {
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
-
-  &__text {
+  .snap-requests-permission {
     @include H7;
 
-    color: $ui-4;
-    display: flex;
-    margin-top: 10px;
+    padding: 16px;
+  }
+  .source-code {
+    @include H7;
 
-    &--link {
+    display: flex;
+    color: $ui-4;
+    .link {
       color: $primary-blue;
       margin-left: 4px;
       cursor: pointer;
