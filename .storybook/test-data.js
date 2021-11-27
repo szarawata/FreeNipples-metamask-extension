@@ -1017,7 +1017,6 @@ const state = {
       'https://app.uniswap.org': {
         permissions: {
           'eth_accounts': {
-            '@context': ['https://github.com/MetaMask/rpc-cap'],
             invoker: 'https://app.uniswap.org',
             parentCapability: 'eth_accounts',
             id: 'a7342e4b-beae-4525-a36c-c0635fd03359',
