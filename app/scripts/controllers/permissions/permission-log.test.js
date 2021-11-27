@@ -1,7 +1,7 @@
 import nanoid from 'nanoid';
 import { useFakeTimers } from 'sinon';
+import stringify from 'fast-safe-stringify';
 import { constants, getters, noop } from '../../../../test/mocks/permissions';
-import { validateActivityEntry } from '../../../../test/helpers/permission-helpers';
 import PermissionLogController from './permission-log';
 import { LOG_LIMIT, LOG_METHOD_TYPES } from './enums';
 
@@ -629,3 +629,39 @@ describe('PermissionLogController', () => {
     });
   });
 });
+
+/**
+ * Validates an activity log entry with respect to a request, response, and
+ * relevant metadata.
+ *
+ * @param {Object} entry - The activity log entry to validate.
+ * @param {Object} req - The request that generated the entry.
+ * @param {Object} [res] - The response for the request, if any.
+ * @param {'restricted'|'internal'} methodType - The method log controller method type of the request.
+ * @param {boolean} success - Whether the request succeeded or not.
+ */
+function validateActivityEntry(entry, req, res, methodType, success) {
+  expect(entry).toBeDefined();
+
+  expect(entry.id).toStrictEqual(req.id);
+  expect(entry.method).toStrictEqual(req.method);
+  expect(entry.origin).toStrictEqual(req.origin);
+  expect(entry.methodType).toStrictEqual(methodType);
+  expect(entry.request).toStrictEqual(stringify(req, null, 2));
+
+  expect(Number.isInteger(entry.requestTime)).toBe(true);
+  if (res) {
+    expect(Number.isInteger(entry.responseTime)).toBe(true);
+    expect(entry.requestTime <= entry.responseTime).toBe(true);
+
+    expect(entry.success).toStrictEqual(success);
+    expect(entry.response).toStrictEqual(stringify(res, null, 2));
+  } else {
+    expect(entry.requestTime > 0).toBe(true);
+    expect(entry).toMatchObject({
+      response: null,
+      responseTime: null,
+      success: null,
+    });
+  }
+}
