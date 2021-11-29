@@ -13,29 +13,41 @@ export default function SnapInstall() {
 
   return (
     <div className="page-container snap-install">
-      <PermissionConnectHeader
-        icon={null}
-        iconName={null}
-        headerTitle={"Install Snap"}
-        headerText={"This is snap’s summary. It shows a simple description of the value of this snap. 120 characters max."}
-        siteOrigin={"http://filecoin.com"}
-        npmLabel={"Placeholder"}
-      />
-      <div className="snap-requests-permission">{t("snapRequestsPermission")}</div>
-      <PermissionsConnectPermissionList permissions={{eth_accounts: true}} />
-      <div className="source-code">
-        <div className="text">{t("areYouDeveloper")}</div>
-        <div className="link" onClick={openSourceCode}>{t("openSourceCode")}</div>
+      <div className="headers">
+        <PermissionConnectHeader
+          icon={'./metamark.svg'}
+          iconName={'MetaMask'}
+          headerTitle={'Install Snap'}
+          headerText={
+            'This is snap’s summary. It shows a simple description of the value of this snap. 120 characters max.'
+          }
+          siteOrigin={'http://filecoin.com'}
+          npmLabel={'Placeholder'}
+        />
+        <div className="snap-requests-permission">
+          {t('snapRequestsPermission')}
+        </div>
+        <PermissionsConnectPermissionList
+          permissions={{ eth_accounts: true }}
+        />
       </div>
-      <PermissionsConnectFooter />
-      <PageContainerFooter
-        cancelButtonTyype="default"
-        onCancel={onCancel}
-        cancelText={t('cancel')}
-        onSubmit={onSubmit}
-        submitText={t('approveAndInstall')}
-        buttonsSizeLarge={false}
-      />
+      <div className="footers">
+        <div className="source-code">
+          <div className="text">{t('areYouDeveloper')}</div>
+          <div className="link" onClick={openSourceCode}>
+            {t('openSourceCode')}
+          </div>
+        </div>
+        <PermissionsConnectFooter />
+        <PageContainerFooter
+          cancelButtonTyype="default"
+          onCancel={onCancel}
+          cancelText={t('cancel')}
+          onSubmit={onSubmit}
+          submitText={t('approveAndInstall')}
+          buttonsSizeLarge={false}
+        />
+      </div>
     </div>
   );
 }

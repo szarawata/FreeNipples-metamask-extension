@@ -2,8 +2,9 @@ import React from 'react';
 import SnapInstall from './snap-install';
 
 export default {
-  title: 'Snap Install',
+  title: 'Pages/Snap Install',
   id: __filename,
 }
 
-export const SnapInstallComponent = () => (<SnapInstall />)
+export const DefaultStory = () => (<SnapInstall />)
+DefaultStory.storyName = 'Default';
