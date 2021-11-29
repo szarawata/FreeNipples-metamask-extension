@@ -139,9 +139,6 @@
   "addNFT": {
     "message": "Add NFT"
   },
-  "addNFTLowerCase": {
-    "message": "add NFT"
-  },
   "addNetwork": {
     "message": "Add Network"
   },
@@ -1255,6 +1252,9 @@
   },
   "importMyWallet": {
     "message": "Import My Wallet"
+  },
+  "importNFTs": {
+    "message": "Import NFTs"
   },
   "importTokenQuestion": {
     "message": "Import token?"
