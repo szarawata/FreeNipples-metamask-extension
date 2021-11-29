@@ -560,6 +560,9 @@
   "contract": {
     "message": "Contract"
   },
+  "contractAddress": {
+    "message": "Contract address"
+  },
   "contractAddressError": {
     "message": "You are sending tokens to the token's contract address. This may result in the loss of these tokens."
   },
@@ -694,6 +697,9 @@
   },
   "depositEther": {
     "message": "Deposit Ether"
+  },
+  "description": {
+    "message": "Description"
   },
   "details": {
     "message": "Details"
@@ -1378,6 +1384,12 @@
   "lastConnected": {
     "message": "Last Connected"
   },
+  "lastPriceSold": {
+    "message": "Last price sold"
+  },
+  "lastSold": {
+    "message": "Last sold"
+  },
   "layer1Fees": {
     "message": "Layer 1 fees"
   },
@@ -1447,6 +1459,9 @@
   },
   "likeToImportTokens": {
     "message": "Would you like to import these tokens?"
+  },
+  "link": {
+    "message": "Link"
   },
   "links": {
     "message": "Links"
@@ -2441,6 +2456,9 @@
   },
   "somethingWentWrong": {
     "message": "Oops! Something went wrong."
+  },
+  "source": {
+    "message": "Source"
   },
   "speedUp": {
     "message": "Speed Up"
