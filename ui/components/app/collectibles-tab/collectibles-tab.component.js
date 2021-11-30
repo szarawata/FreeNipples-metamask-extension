@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Box from '../../ui/box';
 import Button from '../../ui/button';
 import Typography from '../../ui/typography/typography';
@@ -20,7 +21,6 @@ import {
   getCollectibleContracts,
 } from '../../../ducks/metamask/metamask';
 import { getUseCollectibleDetection } from '../../../selectors';
-import { useHistory } from 'react-router';
 import { EXPERIMENTAL_ROUTE } from '../../../helpers/constants/routes';
 import { detectCollectibles } from '../../../store/actions';
 

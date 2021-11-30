@@ -867,11 +867,11 @@
   "editPermission": {
     "message": "Edit Permission"
   },
-  "enableFromSettings": {
-    "message": " Enable it from Settings."
-  },
   "enableAutoDetect": {
     "message": " Enable Autodetect"
+  },
+  "enableFromSettings": {
+    "message": " Enable it from Settings."
   },
   "encryptionPublicKeyNotice": {
     "message": "$1 would like your public encryption key. By consenting, this site will be able to compose encrypted messages to you.",

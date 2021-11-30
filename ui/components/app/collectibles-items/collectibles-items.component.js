@@ -106,12 +106,7 @@ export default function CollectiblesItems({
                         ipfsGateway,
                       );
                       return (
-                        <Box
-                          width={width}
-                          padding={1}
-                          margin={2}
-                          key={`collectible-${i}`}
-                        >
+                        <Box width={width} margin={1} key={`collectible-${i}`}>
                           <Box
                             borderRadius={SIZES.MD}
                             backgroundColor={collectible.backgroundColor}
@@ -175,7 +170,7 @@ export default function CollectiblesItems({
                     {t('enableAutoDetect')}
                   </Button>
                 </Box>
-              ) }
+              )}
               <Typography
                 color={COLORS.UI3}
                 variant={TYPOGRAPHY.H4}
@@ -204,4 +199,6 @@ CollectiblesItems.propTypes = {
   onAddNFT: PropTypes.func.isRequired,
   onRefreshList: PropTypes.func.isRequired,
   collections: PropTypes.array,
+  useCollectibleDetection: PropTypes.bool.isRequired,
+  onEnableAutoDetect: PropTypes.func.isRequired,
 };
