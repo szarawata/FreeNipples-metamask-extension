@@ -2142,9 +2142,6 @@
   "removeNFT": {
     "message": "Remove NFT"
   },
-  "reportAsScam": {
-    "message": "Report as Scam"
-  },
   "requestsAwaitingAcknowledgement": {
     "message": "requests waiting to be acknowledged"
   },
